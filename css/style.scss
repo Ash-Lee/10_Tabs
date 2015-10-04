@@ -1,0 +1,193 @@
+/* 10_Tabs - CSS */
+
+
+@import "reset";                /* Based on Eric Meyer's Reset Sheet */
+@import "grid-framework";       /* 6_GridFramework */
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/*========================================*/
+  /* .tabs */
+/*========================================*/
+.tabs {
+    @include container-fixed();
+}
+
+.tabs-r1 {
+    @include row();
+    margin-top: 20px;
+}
+
+.tabs-r1-c1 {
+    @include column(12);
+
+    .tab-header {
+        margin: 0 auto;
+        border: 1px solid #B3B1B2;
+        border-bottom: none;
+        border-radius: 5px 5px 0px 0px;
+        height: 120px;
+        background-color: #F0F0F0;
+
+        .title, .menu {
+            margin: 0 auto;
+            border: 1px solid #605B56;
+            width: 600px;
+            text-align: center;
+            line-height: 50px;
+            vertical-align: middle;
+            background-color: #FFF;
+                
+            @media only screen and (max-width: 720px) {
+                margin: 0 20px;
+                width: auto;
+            }
+        }
+
+        .title {
+            margin-top: 20px;
+            border-radius: 5px;
+            height: 50px;
+
+            @media only screen and (max-width: 600px) { cursor: pointer; }
+
+            h1 {
+                display: inline-block;
+                margin: 0 auto;
+                height: 50px;
+                font-size: 45px;
+                font-family: "Montserrat Subrayada", Arial;
+                color: #605B56;
+
+                span { color: #EEC584; }
+
+                @media only screen and (max-width: 600px) {
+                    padding-right: 30px;
+                    background-image: url("../assets/arrow-down.png");
+                    background-position: right center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        .menu {
+            display: none;
+            border-top: none;
+            border-radius: 0px 0px 5px 5px;
+            height: 200px;
+            color: #605B56;
+            
+            h2 {
+                margin: 0 auto;
+                border-top: 1px solid #605B56;
+                width: 40%;
+                cursor: pointer;
+
+                &:hover { color: #000; }
+
+                @media only screen and (max-width: 450px) { width: 70%; }
+            }
+
+            .menu1 {
+                border-top: none;
+            }
+        }
+    }
+
+    .tab-menu {
+        z-index: 999;
+        margin-bottom: -1px;                // Pulls ul down to hide .tab-window border
+        border-left: 1px solid #B3B1B2;
+        border-right: 1px solid #B3B1B2;
+        padding-left: 4px;                  // Spacing for first li element
+        font-size: 0;                       // Remove white-space 
+        background-color: #F0F0F0;
+
+        .tab {
+            display: inline-block;
+            margin: 0 2px;
+            border: 1px solid #605B56;
+            border-radius: 5px 5px 0px 0px;
+            height: 31px;
+            width: 100px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 30px;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: #E0E0E0;
+            color: #605B56;
+
+            &:hover { color: #000; }
+        }
+
+        .tab1:hover { background-color:  #9EBD9E; }
+        .tab2:hover { background-color:  #EEC584; }
+        .tab3:hover { background-color:  #DD855C; }
+        .tab4:hover { background-color:  #769EA3; }
+
+        .tabM {
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .tab1, .tab2, .tab3, .tab4 {
+                display: none;
+            }
+
+            .tabM {
+                display: inline-block;
+                cursor: auto;
+            }
+        }
+    }
+
+    .tab-window {
+        margin-bottom: 20px;
+        border: 1px solid #605B56;
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
+        background-color: #9EBD9E;
+
+        .tab-window-content {
+            h1 {
+                margin-bottom: 1rem;
+                font-size: 18px;
+            }
+
+            p { margin-bottom: 0.8rem; }
+        }
+    }
+}
+
+
+
+/*========================================*/
+  /* JavaScript Classes */
+/*========================================*/
+#active1,
+#active2,
+#active3,
+#active4 {
+    border-bottom: none;
+    color: #000;
+}
+
+#active1 { background-color: #9EBD9E; }
+#active2 { background-color: #EEC584; }
+#active3 { background-color: #DD855C; }
+#active4 { background-color: #769EA3; }
+
+.tab-window-content {
+    border: 1px solid #605B56;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #FFF;
+}
