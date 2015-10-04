@@ -163,11 +163,18 @@ html, body {
   @media (min-width: 1200px) {
     .tabs {
       width: 1170px; } }
+  @media only screen and (max-width: 350px) {
+    .tabs {
+      padding-left: 0px;
+      padding-right: 0px; } }
 
 .tabs-r1 {
   display: block;
   /* clears for rows and containers */
   margin-top: 20px; }
+  @media only screen and (max-width: 350px) {
+    .tabs-r1 {
+      margin-top: 0px; } }
 
 .tabs-r1-c1 {
   width: 100%;
@@ -176,6 +183,10 @@ html, body {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
+  @media only screen and (max-width: 350px) {
+    .tabs-r1-c1 {
+      padding-left: 0px;
+      padding-right: 0px; } }
   .tabs-r1-c1 .tab-header {
     margin: 0 auto;
     border: 1px solid #B3B1B2;
@@ -217,6 +228,11 @@ html, body {
             background-image: url("../assets/arrow-down.png");
             background-position: right center;
             background-repeat: no-repeat; } }
+        @media only screen and (max-width: 350px) {
+          .tabs-r1-c1 .tab-header .title h1 {
+            font-size: 28px;
+            background-image: url("../assets/small-arrow-down.png");
+            padding-right: 20px; } }
     .tabs-r1-c1 .tab-header .menu {
       display: none;
       border-top: none;
@@ -281,6 +297,10 @@ html, body {
     border-radius: 0 0 5px 5px;
     padding: 20px;
     background-color: #9EBD9E; }
+    @media only screen and (max-width: 350px) {
+      .tabs-r1-c1 .tab-window {
+        margin-bottom: 0px;
+        padding: 10px; } }
     .tabs-r1-c1 .tab-window .tab-window-content h1 {
       margin-bottom: 1rem;
       font-size: 18px; }

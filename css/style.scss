@@ -18,15 +18,27 @@ html, body {
 /*========================================*/
 .tabs {
     @include container-fixed();
+
+    @media only screen and (max-width: 350px) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 
 .tabs-r1 {
     @include row();
     margin-top: 20px;
+
+    @media only screen and (max-width: 350px) { margin-top: 0px; }
 }
 
 .tabs-r1-c1 {
     @include column(12);
+
+    @media only screen and (max-width: 350px) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 
     .tab-header {
         margin: 0 auto;
@@ -73,6 +85,12 @@ html, body {
                     background-image: url("../assets/arrow-down.png");
                     background-position: right center;
                     background-repeat: no-repeat;
+                }
+
+                @media only screen and (max-width: 350px) { 
+                    font-size: 28px;
+                    background-image: url("../assets/small-arrow-down.png");
+                    padding-right: 20px; 
                 }
             }
         }
@@ -155,6 +173,11 @@ html, body {
         border-radius: 0 0 5px 5px;
         padding: 20px;
         background-color: #9EBD9E;
+
+        @media only screen and (max-width: 350px) {
+            margin-bottom: 0px;
+            padding: 10px;
+        }
 
         .tab-window-content {
             h1 {
